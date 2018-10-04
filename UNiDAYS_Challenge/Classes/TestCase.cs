@@ -29,7 +29,6 @@ namespace UNiDAYS_Challenge
             Console.Write($"\n{String.Join(", ", items)}");
             Console.Write($"\n\nThe total for this basket comes to £{Math.Round(result.Total, 2)}.");
             Console.Write($"\n{((result.DeliveryCharge > 0) ? $"There will be a delivery charge of £{Math.Round(result.DeliveryCharge, 2)}." : "There will be NO delivery charge for this order.")}");
-            Console.Write("\n===============================================");
         }
     }
 }
