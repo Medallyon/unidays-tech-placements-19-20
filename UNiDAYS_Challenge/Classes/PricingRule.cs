@@ -11,7 +11,7 @@ namespace UNiDAYS_Challenge
         internal Type AssociatedClassType { get; set; }
         // The amount of `Item`s that have to be in a
         // basket in order for the discount to be eligible
-        internal int ItemModifier { get; set; } = -1;
+        internal int ItemsRequired { get; set; } = -1;
         // The price modifier that is eventually applied on a discount
         internal double PriceModifier { get; set; }
 
@@ -20,10 +20,10 @@ namespace UNiDAYS_Challenge
             this.AssociatedClassType = classType;
         }
 
-        public PricingRule(Type classType, int itemModifier, double priceModifier)
+        public PricingRule(Type classType, int itemsRequired, double priceModifier)
         {
             this.AssociatedClassType = classType;
-            this.ItemModifier = itemModifier;
+            this.ItemsRequired = itemsRequired;
             this.PriceModifier = priceModifier;
         }
     }

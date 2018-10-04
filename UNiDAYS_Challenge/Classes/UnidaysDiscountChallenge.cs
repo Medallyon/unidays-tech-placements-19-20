@@ -49,11 +49,11 @@ namespace UNiDAYS_Challenge
                 {
                     // Skip this rule if the type of the item doesn't match the rule
                     // or if the item has no discounts associated with it
-                    if (!(rule.AssociatedClassType == items[0].GetType() && rule.ItemModifier != -1))
+                    if (!(rule.AssociatedClassType == items[0].GetType() && rule.ItemsRequired != -1))
                         continue;
 
-                    double numberOfDiscounts = Math.Floor((double)(items.Count / rule.ItemModifier));
-                    double numberOfRemainingItems = Math.Floor(items.Count - (numberOfDiscounts * rule.ItemModifier));
+                    double numberOfDiscounts = Math.Floor((double)(items.Count / rule.ItemsRequired));
+                    double numberOfRemainingItems = Math.Floor(items.Count - (numberOfDiscounts * rule.ItemsRequired));
 
                     // Add all discounted prices to total
                     for (int i = 0; i < numberOfDiscounts; i++)
