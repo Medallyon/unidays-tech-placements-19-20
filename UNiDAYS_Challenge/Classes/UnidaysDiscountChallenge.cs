@@ -56,12 +56,10 @@ namespace UNiDAYS_Challenge
                     double numberOfRemainingItems = Math.Floor(items.Count - (numberOfDiscounts * rule.ItemsRequired));
 
                     // Add all discounted prices to total
-                    for (int i = 0; i < numberOfDiscounts; i++)
-                        result.Total += items[0].Price * rule.PriceModifier;
+                    result.Total += (items[0].Price * rule.PriceModifier) * numberOfDiscounts;
 
                     // Add all remaining items that don't apply for a discount
-                    for (int i = 0; i < numberOfRemainingItems; i++)
-                        result.Total += items[0].Price;
+                    result.Total += items[0].Price * numberOfRemainingItems;
 
                     added = true;
                 }
